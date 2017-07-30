@@ -1,2 +1,1 @@
-# polls
-A voting app
+# Backend Challenges boilerplate - package.json
