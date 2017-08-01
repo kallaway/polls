@@ -28,7 +28,12 @@ MongoClient.connect(process.env.MONGODB_URL, (err, db) => {
       });
     }
 
+    app.set('views', './views');
+    app.set('view engine', 'pug');
+      
     app.use('/public', express.static(process.cwd() + '/public'));
+    
+    
 
     app.route('/_api/package.json')
       .get(function(req, res, next) {
@@ -44,10 +49,15 @@ MongoClient.connect(process.env.MONGODB_URL, (err, db) => {
           res.json({ "new": "pole will be created" });
         })
 
-    app.route('/')
-        .get(function(req, res) {
-          res.sendFile(process.cwd() + '/views/index.html');
-        })
+    app.get('/', function (req, res) {
+      res.render('index')
+      //res.render('index', { title: 'Hey', message: 'Hello there!' })
+    })
+    
+    // app.route('/')
+    //     .get(function(req, res) {
+    //       res.sendFile(process.cwd() + '/views/index.html');
+    //     })
 
     // Respond not found to all the wrong routes
     app.use(function(req, res, next){
