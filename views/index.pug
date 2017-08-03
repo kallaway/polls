@@ -1,6 +1,25 @@
 doctype html
 html
-  include header.pug
+  // include header.pug
+  head
+  title Polls - Voting App by Alexander Kallaway - Free Code Camp
+  meta(name='viewport', content='width=device-width', initial-scale='1')
+
+  link(href='https://cdn.glitch.com/f02c7627-6408-4a9f-a7c3-af6396474ced%2Ffavicon.ico?1501394254130', rel='shortcut icon', type='image/x-icon')
+  link(href='https://fonts.googleapis.com/css?family=Roboto', rel='stylesheet', type='text/css')
+  link(href='/public/style.css', rel='stylesheet', type='text/css')
+  link(href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css', rel='stylesheet')
+  link(rel='stylesheet',href='https://cdnjs.cloudflare.com/ajax/libs/bulma/0.5.0/css/bulma.min.css') 
   
   body
-    h1 lalala
+    h1 Voting App
+    section.section
+      .container
+        h1.title Polls - Voting App by #[a(href="https://twitter.com/ka11away" target="_blank") Alexander Kallaway]
+        p.subtitle Create a poll and invite your friends to vote!
+        a(href="/new-poll")
+            button.button Create a poll
+    section
+      p.subtitle
+        | Check out the polls below and vote on them or 
+        a(href="/new-poll") make a new poll!

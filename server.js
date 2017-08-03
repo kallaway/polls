@@ -15,6 +15,9 @@ MongoClient.connect(process.env.MONGODB_URL, (err, db) => {
   if(!err) {
     console.log('Connected to the database');
 
+    app.set('views', './views');
+    app.set('view engine', 'pug');
+    
     if (!process.env.DISABLE_XORIGIN) {
       app.use(function(req, res, next) {
         var allowedOrigins = ['https://narrow-plane.gomix.me', 'https://www.freecodecamp.com'];
@@ -28,13 +31,8 @@ MongoClient.connect(process.env.MONGODB_URL, (err, db) => {
       });
     }
 
-    app.set('views', './views');
-    app.set('view engine', 'pug');
-      
     app.use('/public', express.static(process.cwd() + '/public'));
     
-    
-
     app.route('/_api/package.json')
       .get(function(req, res, next) {
         console.log('requested');
