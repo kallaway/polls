@@ -46,6 +46,11 @@ MongoClient.connect(process.env.MONGODB_URL, (err, db) => {
         .get(function(req, res) {
           res.json({ "new": "pole will be created" });
         })
+    
+    app.get('/poll', function (req, res) {
+      res.render('poll')
+      //res.render('index', { title: 'Hey', message: 'Hello there!' })
+    })
 
     app.get('/', function (req, res) {
       res.render('index')
