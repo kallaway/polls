@@ -1,10 +1,11 @@
 {
   "name": "fcc-learn-npm-package-json",
   "dependencies": {
-    "express": "^4.15.3",
+    "express": "^4.15.4",
     "bulma": "^0.5.0",
     "mongodb": "^2.2.30",
-    "pug": "^0.1.0"
+    "pug": "^0.1.0",
+    "d3": "^4.10.0"
   },
   "main": "server.js",
   "scripts": {

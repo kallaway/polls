@@ -8,6 +8,7 @@
 var fs = require('fs');
 var express = require('express');
 var app = express();
+var d3 = require('d3');
 
 var MongoClient = require('mongodb').MongoClient;
 
@@ -49,6 +50,10 @@ MongoClient.connect(process.env.MONGODB_URL, (err, db) => {
     
     app.get('/poll', function (req, res) {
       res.render('poll')
+      
+      
+    //   d3.select('.poll-pie').data([4, 8, 15, 16, 23, 42])
+    // .style("font-size", function(d) { return d + "px"; });
       //res.render('index', { title: 'Hey', message: 'Hello there!' })
     })
 
