@@ -11,6 +11,10 @@ html
     link(href='/public/style.css', rel='stylesheet', type='text/css')
     link(href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css', rel='stylesheet')
     link(rel='stylesheet',href='https://cdnjs.cloudflare.com/ajax/libs/bulma/0.5.0/css/bulma.min.css') 
+    //link(rel='stylesheet',href='/js/poll.js')
+    script
+      // include ../js/poll.js
+  
   
 body
   h1 Voting App
@@ -19,12 +23,21 @@ body
         h2 Poll name displayed
     section.section
       // get and display array of options
+      .columns
+        .column
+          .poll-question What is this poll's question?
+          div I'd like to vote for ...
+          .select
+            select(placeholder="choose an option")
+              option Option A
+              option Option B
+              option I would like a custom option
+          button.button.is-primary #[i.fa.fa-twitter(aria-hidden="true")]  Share on Twitter
+        .column
+          // here there should be a pie chart
+          canvas(width="960", height="500")
+          
       
-      .select
-        select(placeholder="choose an option")
-          option Option A
-          option Option B
-          option I would like a custom option
           
       
       
